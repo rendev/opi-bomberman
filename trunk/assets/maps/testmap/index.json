@@ -1,0 +1,16 @@
+{
+	"name" : "Test Map",
+	"width" : 100,
+	"height" : 100,
+	"background" : { "img" : "grass.png", "mode" : "repeat" },
+	"objects" : 
+	[
+		{			
+			"name" : "box",
+			"type" : "static",
+			"position" : { "x" : 10, "y" : 10 },
+			"repeat" : { "orientation" : "horizontal", "count" : 10 },
+			"params" : {}
+		}
+	]
+}
