@@ -12,18 +12,24 @@ import android.util.Log;
 import com.google.gson.*;
 
 public class MapLoader {
-	public MapLoader(InputStream mapIndexFileStream) {
+	
+	public MapLoader() {
+	
+	}
+	
+	public OpiMap loadMap(InputStream mapIndexFileStream) {
+		OpiMap map = new OpiMap();
+		
 		try {		
 			InputStreamReader reader = new InputStreamReader(mapIndexFileStream,"utf-8");
 			JsonParser parser = new JsonParser();
 			JsonObject rootObj = parser.parse(reader).getAsJsonObject();
-			String mapName = rootObj.get("name").getAsString();
-			Log.d("MapLoader", "Map name="+mapName);
-			Log.d("MapLoader", "Map objects count="+rootObj.getAsJsonArray("objects").size());
+			map.initFromJson(rootObj);
 		} catch (IOException ex) {			
 			Log.e("MapLoader", ex.getMessage());
 		} catch (Exception e) {
 			Log.e("MapLoader", e.getMessage());
 		}
+		return map;
 	}
 }
