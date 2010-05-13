@@ -2,10 +2,17 @@ package com.opisoft.engine.components;
 
 import com.google.gson.JsonObject;
 
-public class Component {
+public abstract class Component implements Cloneable {
 	private String _assetsPath;
 	
-	boolean initFromJson(JsonObject object) {
+	public Component() {		
+	}
+	
+	public Component(Component other) {
+		_assetsPath = other._assetsPath;
+	}
+	
+	public boolean initFromJson(JsonObject object) {
 		return false;
 	}
 
@@ -17,5 +24,6 @@ public class Component {
 		return _assetsPath;
 	}
 	
-	
+	public abstract void release();	
+	public abstract Component clone();
 }

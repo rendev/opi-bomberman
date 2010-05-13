@@ -8,7 +8,7 @@
 		"img": "grass.png", 
 		"mode": "repeat"
 	}, 
-	"objects": [
+	"entities": [
 		{
 			"repeat": {
 				"orientation": "horizontal", 
@@ -16,8 +16,8 @@
 			}, 
 			"components": [
 				{ "type": "render", "texture": { "src": "box.png" }	}, 
-				{ "type": "size", "width": 48, "height": 48 }, 
-				{ "type": "position", "x": 48, "y": 48}
+				{ "type": "size", "width": 1, "height": 1 }, 
+				{ "type": "position", "x": 2, "y": 2}
 			]
 		}
 	]
