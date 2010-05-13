@@ -3,6 +3,8 @@ package com.opisoft.engine.components;
 import java.util.HashMap;
 import java.util.Map;
 
+import android.util.Log;
+
 public class ComponentFactory {
 	private Map<String,Class<? extends Component>> _componentsMap;
 
@@ -23,7 +25,10 @@ public class ComponentFactory {
 		if (classType != null) {			
 			try {
 				component = (Component)classType.newInstance();
-			} catch (Exception ex) {}
+			} catch (Exception ex) { 
+				Log.d("ComonentFactory", ex.getMessage());
+				ex.printStackTrace();
+			}
 		}
 		return component;
 	}

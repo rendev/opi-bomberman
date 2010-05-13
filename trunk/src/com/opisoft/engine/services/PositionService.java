@@ -7,6 +7,7 @@ import java.util.Set;
 import android.graphics.Point;
 
 import com.opisoft.engine.Entity;
+import com.opisoft.engine.GameEngine;
 import com.opisoft.engine.Metrics;
 import com.opisoft.engine.commands.Command;
 import com.opisoft.engine.commands.ICommandResult;
@@ -24,14 +25,14 @@ public class PositionService implements IService {
 	
 	public ICommandResult process(Command command) {
 		if (command.getClass() == PositionCommand.class) {
-			Entity entity = command.getEntity();
-			
-			if (entity != null && entity.hasComponent(Position.class) && entity.hasComponent(Render.class)) {
-				Position position = (Position)entity.getComponent(Position.class);
-				Point ptInPixels = Metrics.self.measure(position.getPosInCells());
-				Render render = (Render)entity.getComponent(Render.class);
-				Sprite sprite = render.getSprite();
-				sprite.setXY(ptInPixels.x, ptInPixels.y);
+			for (Entity entity : command.getEntities()) {
+				if (entity != null && entity.hasComponent(Position.class) && entity.hasComponent(Render.class)) {
+					Position position = (Position)entity.getComponent(Position.class);
+					Point ptInPixels = GameEngine.self.mapMetrics().measure(position.getPosInCells());
+					Render render = (Render)entity.getComponent(Render.class);
+					Sprite sprite = render.getSprite();
+					sprite.setXY(ptInPixels.x, ptInPixels.y);
+				}
 			}
 		}
 		return null;

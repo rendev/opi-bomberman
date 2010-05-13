@@ -1,30 +1,28 @@
 package com.opisoft.engine;
 
-import android.app.Activity;
 import android.graphics.Point;
 
 public class Metrics {
-	private Integer _cellWidth;
-	private Integer _cellHeight;
+	private int _cellWidth;
+	private int _cellHeight;
 	
-	public static final Metrics self = new Metrics();
-		
-	protected Metrics() {
+	public Metrics() {
+		init();
 	}
 	
 	public void init() {
-		
+		_cellWidth = _cellHeight = 32;
 	}
 	
-	public Integer cellWidth() {
+	public int cellWidth() {
 		return _cellWidth;
 	}
 	
-	public Integer cellHeight() {
+	public int cellHeight() {
 		return _cellHeight;
 	}
 	
-	public Point measure(Point pt) {
-		return new Point(pt.x*cellWidth(),pt.y*cellHeight());
+	public Point measure(Point ptInCells) {
+		return new Point(ptInCells.x*cellWidth(),ptInCells.y*cellHeight());
 	}
 }
