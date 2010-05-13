@@ -4,19 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MapObjectsFactory {
-	private static MapObjectsFactory _self;
 	private Map<String,MapObject> _objectsMap;
-	
+
+	public static final MapObjectsFactory self = new MapObjectsFactory();
+
 	public MapObjectsFactory() {
 		_objectsMap = new HashMap<String,MapObject>();
 	}
-	
-	public static MapObjectsFactory self() {
-		if (_self == null)
-			_self = new MapObjectsFactory();		
-		return _self;
-	}
-	
+		
 	public boolean registerObject(String type, MapObject prototype) {
 		return (_objectsMap.put(type, prototype) != null);		
 	}
