@@ -11,6 +11,7 @@ import com.opisoft.engine.commands.ICommandResult;
 import com.opisoft.engine.commands.LoadTexturesCommand;
 import com.opisoft.engine.commands.RenderCommand;
 import com.opisoft.engine.commands.RenderCommandResult;
+import com.opisoft.engine.components.ComponentType;
 import com.opisoft.engine.components.Render;
 import com.stickycoding.Rokon.Rokon;
 import com.stickycoding.Rokon.Sprite;
@@ -31,9 +32,9 @@ public class RenderService implements IService {
 	public ICommandResult process(Command command) {
 		if (command.getClass() == RenderCommand.class) {
 			for (Entity entity : command.getEntities()) {
-				if (entity != null && entity.hasComponent(Render.class)) {
+				if (entity != null && entity.hasComponent(ComponentType.Render)) {
 					Rokon rokon = Rokon.getRokon();
-					Render render = (Render)entity.getComponent(Render.class);
+					Render render = (Render)entity.getComponent(ComponentType.Render);
 					Sprite sprite = render.getSprite();
 					rokon.addSprite(sprite,render.getZIndex());
 				}

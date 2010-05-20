@@ -4,9 +4,9 @@ import java.util.List;
 
 import com.opisoft.engine.Entity;
 
-public class RenderCommand extends Command {
-	public RenderCommand(List<Entity> entities) {
-		super(CommandType.Render);
+public class ResizeCommand extends Command {
+	public ResizeCommand(List<Entity> entities) {
+		super(CommandType.Resize);
 		addEntities(entities);
 	}
 }

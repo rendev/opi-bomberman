@@ -10,6 +10,15 @@
 	}, 
 	"entities": [
 		{
+			"dn" : "bomber",
+			"components": [
+				{ "type": "render", "texture": { "src": "bomber.png" }	}, 
+				{ "type": "size", "width": 1, "height": 1 }, 
+				{ "type": "position", "x": 4, "y": 3},
+				{ "type": "move", "speed" : 2 }
+			]
+		},
+		{
 			"repeat": {
 				"orientation": "horizontal", 
 				"count": 8
@@ -18,6 +27,28 @@
 				{ "type": "render", "texture": { "src": "box.png" }	}, 
 				{ "type": "size", "width": 1, "height": 1 }, 
 				{ "type": "position", "x": 2, "y": 2}
+			]
+		},
+		{
+			"repeat": {
+				"orientation": "vertical", 
+				"count": 6
+			}, 
+			"components": [
+				{ "type": "render", "texture": { "src": "brick.png" }	}, 
+				{ "type": "size", "width": 1, "height": 1 }, 
+				{ "type": "position", "x": 3, "y": 3}
+			]
+		},
+		{
+			"repeat": {
+				"orientation": "horizontal", 
+				"count": 4
+			}, 
+			"components": [
+				{ "type": "render", "texture": { "src": "brick.png" }	}, 
+				{ "type": "size", "width": 1, "height": 1 }, 
+				{ "type": "position", "x": 4, "y": 7}
 			]
 		}
 	]
