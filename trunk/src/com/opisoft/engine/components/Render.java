@@ -15,6 +15,7 @@ public class Render extends Component {
 	private int _zIndex;
 
 	public Render() {
+		super(ComponentType.Render);
 	}
 	
 	public Render(Render other) {

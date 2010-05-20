@@ -8,7 +8,7 @@ public class Position extends Component {
 	private Point _posInCells;
 	
 	public Position() {
-		
+		super(ComponentType.Position);
 	}
 	
 	public Position(Position other) {

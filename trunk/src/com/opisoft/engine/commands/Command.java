@@ -7,9 +7,15 @@ import com.opisoft.engine.Entity;
 
 public class Command {	
 	private List<Entity> _entities;
+	private CommandType _type;
 	
-	public Command() {
+	public Command(CommandType type) {
+		_type = type;
 		_entities = new ArrayList<Entity>();
+	}
+	
+	public CommandType type() {
+		return _type;
 	}
 	
 	public void addEntities(List<Entity> entities) {

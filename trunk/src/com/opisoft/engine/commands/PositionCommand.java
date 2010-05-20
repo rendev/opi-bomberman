@@ -6,6 +6,7 @@ import com.opisoft.engine.Entity;
 
 public class PositionCommand extends Command {
 	public PositionCommand(List<Entity> entities) {
+		super(CommandType.Position);
 		addEntities(entities);
 	}
 }
