@@ -1,0 +1,1 @@
+This game is based on the Rokon 1.x game engine series. The main idea is to develop powerful and flexible component-based entity game system.
